@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="Blatt13">
+    <output-path>$PROJECT_DIR$/out/artifacts/Blatt13</output-path>
+    <root id="root">
+      <element id="archive" name="Blatt13.jar">
+        <element id="module-output" name="Blatt13" />
+      </element>
+    </root>
+  </artifact>
+</component>

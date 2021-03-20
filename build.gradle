@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.9'
+}
+mainClassName = 'Grafik.MainClass'
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+    }
+}
+
+dependencies {
+    compile 'junit:junit:4.12'
+}
+javafx {
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+javafx {
+    version = '15'
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+javafx {
+    sdk = '/home/max/javafx'
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+jar {
+    manifest {
+        attributes('Main-Class': 'Grafik.MainClass')
+    }
+}
+
+
