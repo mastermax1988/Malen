@@ -4,9 +4,12 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -63,6 +66,21 @@ public class Malen extends Application
             pane.getChildren().clear();
         });
         menuPane.add(button,1,0);
+        Label label = new Label();
+        label.setText("Titel:");
+        label.setStyle("-fx-text-fill: red; -fx-font-weight: bold");
+        menuPane.add(label,2,0);
+
+        Label titel = new Label();
+        titel.setStyle("-fx-font-size: 20; -fx-font-weight: bold");
+        borderPane.setTop(titel);
+        borderPane.setAlignment(titel, Pos.TOP_CENTER);
+
+        TextField txt = new TextField();
+        txt.addEventHandler(Event.ANY,(e)->{
+            titel.setText(txt.getText());
+        });
+        menuPane.add(txt,4,0);
         borderPane.setBottom(menuPane);
         Scene scene = new Scene(borderPane,800,600);
         stage.setScene(scene);
